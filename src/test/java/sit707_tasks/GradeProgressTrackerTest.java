@@ -65,7 +65,7 @@ public class GradeProgressTrackerTest {
         // No assertions here as it just prints to console
     }
 
-    @Test
+     @Test
     public void testCompleteTask_StatusNotSet() {
         // Add a task first
         tracker.addTask();
@@ -75,19 +75,6 @@ public class GradeProgressTrackerTest {
         Task task = tasks.get(0);
         assertNotNull(task);
         // The task completion status should still be false
-        assertTrue("Task completion status should not be set without completing it", task.isCompleted());
+        assertFalse("Task completion status should not be set without completing it", task.isCompleted());
     }
-    
-//    @Test
-//    public void testCompleteTask_StatusNotSet1() {
-//        // Add a task first
-//        tracker.addTask();
-//        // Do not actually complete the task
-//        List<Task> tasks = tracker.getTasks();
-//        assertFalse(tasks.isEmpty());
-//        Task task = tasks.get(0);
-//        assertNotNull(task);
-//        // The task completion status should still be false, but we assert true to make the test fail
-//        assertTrue("Task completion status should not be set without completing it", task.isCompleted());
-//    }
 }
